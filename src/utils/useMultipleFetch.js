@@ -6,7 +6,7 @@ const useMultipleFetch = url => {
     const res = await (await axios.get(_)).data.data;
     return res;
   };
-  const { data, error } = useSWR(url, fetcher, { shouldRetryOnError: false });
+  const { data, error } = useSWR(url, fetcher);
 
   return {
     data,

@@ -159,6 +159,28 @@ const Snippet = () => {
 
         <ul className="text-gray-400 text-xs mb-2 flex items-center">
           {!user ? null : user.user.username === data.user.username ? (
+            <Link
+              to={`/${data.user.username}/${data.uid}/edit`}
+              className="cursor-pointer text-gray-100 rounded-md px-3 py-1 bg-gray-700 border border-gray-600 mr-2 hidden md:block hover:border-gray-500 hover:bg-gray-600"
+            >
+              <svg
+                className="w-5 inline-block mr-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                />
+              </svg>
+              <span className="inline-block">Edit</span>
+            </Link>
+          ) : null}
+          {!user ? null : user.user.username === data.user.username ? (
             <li
               onClick={deleteSnippet}
               className="cursor-pointer text-red-500 rounded-md px-3 py-1 bg-gray-700 border border-gray-600 mr-2 hidden md:block hover:bg-red-500 hover:text-gray-100 hover:border-transparent"
@@ -185,10 +207,10 @@ const Snippet = () => {
             {starred ? (
               <button
                 onClick={handleUnstar}
-                className="border w-full md:rounded-tl-md md:rounded-bl-md border-gray-600 block py-1 px-3 focus:outline-none outline-none hover:border-gray-400"
+                className="border w-full md:rounded-tl-md md:rounded-bl-md border-gray-600 block py-1 px-3 focus:outline-none outline-none hover:border-gray-400 hover:bg-gray-600"
               >
                 <svg
-                  className="w-4 mr-1 inline"
+                  className="w-5 mr-1 inline"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"

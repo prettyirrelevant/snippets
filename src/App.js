@@ -8,6 +8,7 @@ import Profile from "./routes/Profile";
 import Snippet from "./routes/Snippet";
 import AddSnippet from "./routes/AddSnippet";
 import NotFound from "./components/NotFound";
+import EditSnippet from "./routes/EditSnippet";
 
 const App = () => {
   return (
@@ -18,13 +19,14 @@ const App = () => {
     >
       <Navbar />
       <Router>
+        <NotFound default />
         <Home path="/" />
         <Profile path=":username" />
         <Snippet path=":username/:snippetUid" />
+        <EditSnippet path=":username/:snippetUid/edit" />
         <Register path="register" />
         <Login path="login" />
         <AddSnippet path="add" />
-        <NotFound default />
       </Router>
     </ToastProvider>
   );

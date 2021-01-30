@@ -14,9 +14,7 @@ const useSingleFetch = url => {
 
     return res;
   };
-  const { data, mutate, error } = useSWR(url, fetcher, {
-    shouldRetryOnError: false,
-  });
+  const { data, mutate, error } = useSWR(url, fetcher);
   return {
     data,
     mutate,

@@ -12,6 +12,7 @@ import "codemirror/theme/material-ocean.css";
 import { useRef } from "react";
 import { useToasts } from "react-toast-notifications";
 import axios from "axios";
+import useUser from "../utils/useUser";
 
 const AddSnippet = () => {
   const { addToast } = useToasts();
@@ -28,7 +29,7 @@ const AddSnippet = () => {
     length: 3,
     separator: "-",
   });
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = useUser();
   if (!user) {
     return <Redirect noThrow from="/add" to="/login" />;
   } else {
@@ -41,7 +42,6 @@ const AddSnippet = () => {
         const name = fileName.current.value || _fileName + ".txt";
         const description = _description.current.value || "";
         const secret = isSecret.current.checked;
-        console.log(secret);
         const content = codeEditor.current.editor.getValue();
         axios
           .post(
