@@ -145,7 +145,7 @@ const Snippet = () => {
               </Link>{" "}
               /{" "}
               <Link
-                to={`${data.user.username}/${data.uid}`}
+                to={`/${data.user.username}/${data.uid}`}
                 className="text-blue-500 font-bold hover:underline"
               >
                 {data.name}
