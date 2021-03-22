@@ -5,6 +5,7 @@ import moment from "moment";
 import "codemirror/theme/material-ocean.css";
 import "codemirror/mode/meta";
 import { useRef } from "react";
+import Secret from "./Secret";
 
 cm.modeURL =
   "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/%N/%N.js";
@@ -16,6 +17,7 @@ const CodeBlock = ({
   comment_set,
   created_on,
   name,
+  secret,
   // description,
   content,
 }) => {
@@ -73,6 +75,7 @@ const CodeBlock = ({
               >
                 {name}
               </Link>
+              {secret && <Secret />}
             </span>
             <div className="text-gray-400 text-xs">
               Created {moment(created_on).fromNow()}
