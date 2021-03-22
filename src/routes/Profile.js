@@ -3,12 +3,10 @@ import CodeBlock from "../components/CodeBlock";
 import NotFound from "../components/NotFound";
 import Spinner from "../components/Spinner";
 import useSingleFetch from "../utils/useSingleFetch";
-import useUser from "../utils/useUser";
 
 const Profile = () => {
-  const user = useUser();
   const params = useParams();
-  const { data, mutate, isLoading, isError } = useSingleFetch(
+  const { data, isLoading, isError } = useSingleFetch(
     `https://snippets-backend-api.herokuapp.com/api/users/${params.username}`
   );
 
