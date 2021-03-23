@@ -70,7 +70,7 @@ const CodeBlock = ({
               </Link>{" "}
               /{" "}
               <Link
-                to={`${username}/${uid}`}
+                to={`/${username}/${uid}`}
                 className="text-blue-500 font-bold hover:underline"
               >
                 {name}
